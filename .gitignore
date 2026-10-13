@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+relu_plot.png
+sigmoid_plot.png

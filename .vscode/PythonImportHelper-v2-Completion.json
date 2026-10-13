@@ -1,0 +1,140 @@
+[
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "relu",
+        "importPath": "activations",
+        "description": "activations",
+        "isExtraImport": true,
+        "detail": "activations",
+        "documentation": {}
+    },
+    {
+        "label": "sigmoid",
+        "importPath": "activations",
+        "description": "activations",
+        "isExtraImport": true,
+        "detail": "activations",
+        "documentation": {}
+    },
+    {
+        "label": "relu",
+        "importPath": "activations",
+        "description": "activations",
+        "isExtraImport": true,
+        "detail": "activations",
+        "documentation": {}
+    },
+    {
+        "label": "sigmoid",
+        "importPath": "activations",
+        "description": "activations",
+        "isExtraImport": true,
+        "detail": "activations",
+        "documentation": {}
+    },
+    {
+        "label": "Neuron",
+        "importPath": "neuron",
+        "description": "neuron",
+        "isExtraImport": true,
+        "detail": "neuron",
+        "documentation": {}
+    },
+    {
+        "label": "DenseLayer",
+        "importPath": "layer",
+        "description": "layer",
+        "isExtraImport": true,
+        "detail": "layer",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "relu",
+        "kind": 2,
+        "importPath": "activations",
+        "description": "activations",
+        "peekOfCode": "def relu(x):\n    return np.maximum(0, x)\ndef sigmoid(x):\n    x = np.asarray(x, dtype=float)\n    return 1 / (1 + np.exp(-x))",
+        "detail": "activations",
+        "documentation": {}
+    },
+    {
+        "label": "sigmoid",
+        "kind": 2,
+        "importPath": "activations",
+        "description": "activations",
+        "peekOfCode": "def sigmoid(x):\n    x = np.asarray(x, dtype=float)\n    return 1 / (1 + np.exp(-x))",
+        "detail": "activations",
+        "documentation": {}
+    },
+    {
+        "label": "DenseLayer",
+        "kind": 6,
+        "importPath": "layer",
+        "description": "layer",
+        "peekOfCode": "class DenseLayer:\n    def __init__(self, weights, biases, activation):\n        self.weights = np.asarray(weights, dtype=float)\n        self.biases = np.asarray(biases, dtype=float)\n        self.activation = activation\n    def forward(self, inputs):\n        inputs = np.asarray(inputs, dtype=float)\n        z = np.dot(inputs, self.weights.T) + self.biases\n        return z, self.activation(z)",
+        "detail": "layer",
+        "documentation": {}
+    },
+    {
+        "label": "inputs",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "inputs = np.array([2.0, 1.5, -0.5])\nneuron = Neuron([0.8, -0.4, 0.6], 0.2, sigmoid)\nz, output = neuron.forward(inputs)\nprint(\"SINGLE NEURON\")\nprint(\"Inputs:\", inputs)\nprint(\"Weighted sum:\", z)\nprint(\"Sigmoid output:\", output)\nlayer = DenseLayer(\n    weights=[\n        [0.2, 0.8, -0.5],",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "neuron",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "neuron = Neuron([0.8, -0.4, 0.6], 0.2, sigmoid)\nz, output = neuron.forward(inputs)\nprint(\"SINGLE NEURON\")\nprint(\"Inputs:\", inputs)\nprint(\"Weighted sum:\", z)\nprint(\"Sigmoid output:\", output)\nlayer = DenseLayer(\n    weights=[\n        [0.2, 0.8, -0.5],\n        [0.5, -0.3, 0.7],",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "layer",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "layer = DenseLayer(\n    weights=[\n        [0.2, 0.8, -0.5],\n        [0.5, -0.3, 0.7],\n        [-0.6, 0.4, 0.9],\n    ],\n    biases=[0.1, -0.2, 0.3],\n    activation=relu,\n)\nz_layer, outputs = layer.forward([1.0, 2.0, -1.0])",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Neuron",
+        "kind": 6,
+        "importPath": "neuron",
+        "description": "neuron",
+        "peekOfCode": "class Neuron:\n    def __init__(self, weights, bias, activation):\n        self.weights = np.asarray(weights, dtype=float)\n        self.bias = float(bias)\n        self.activation = activation\n    def forward(self, inputs):\n        inputs = np.asarray(inputs, dtype=float)\n        z = np.dot(inputs, self.weights) + self.bias\n        return z, self.activation(z)",
+        "detail": "neuron",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "plot_activations",
+        "description": "plot_activations",
+        "peekOfCode": "x = np.linspace(-10, 10, 500)\nplt.figure(figsize=(8, 5))\nplt.plot(x, relu(x))\nplt.title(\"ReLU Activation Function\")\nplt.xlabel(\"x\")\nplt.ylabel(\"ReLU(x)\")\nplt.grid(alpha=0.25)\nplt.tight_layout()\nplt.savefig(\"relu_plot.png\", dpi=180)\nplt.show()",
+        "detail": "plot_activations",
+        "documentation": {}
+    }
+]

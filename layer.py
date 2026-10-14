@@ -9,4 +9,8 @@ class DenseLayer:
     def forward(self, inputs):
         inputs = np.asarray(inputs, dtype=float)
         z = np.dot(inputs, self.weights.T) + self.biases
-        return z, self.activation(z)
+        output = self.activation(z)
+        return {
+            "weighted_sums": z,
+            "outputs": output,
+        }

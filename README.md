@@ -1,43 +1,72 @@
-# Neural Network Fundamentals Lab
+# Neural Network Fundamentals from Scratch
 
-A from-scratch NumPy implementation of a single neuron, a small dense layer, and ReLU/Sigmoid plots.
+This existing project now covers two stages:
 
-## Requirements Covered
+1. Neural-network building blocks
+2. How networks learn: forward pass, loss, and backpropagation intuition
+
+## Concepts Covered
+
 - Inputs
 - Weights
 - Bias
-- Weighted sum
+- Weighted sums
 - ReLU
 - Sigmoid
-- Output
-- Single neuron in NumPy
-- Small layer in NumPy
-- ReLU and Sigmoid plots
+- Single neuron
+- Dense layer
+- Forward pass
+- Prediction
+- Target
+- Mean Squared Error
+- Binary Cross Entropy
+- Gradient intuition
+- Numerical gradients
+- Backpropagation intuition
+- Learning rate
+- Gradient descent
+- Weight updates
+- Epochs
+- Training vs inference
 
-## Core Formula
+## Learning Cycle
 
-Single neuron:
+```text
+Input
+  ↓
+Forward Pass
+  ↓
+Prediction
+  ↓
+Loss
+  ↓
+Gradient / Backpropagation
+  ↓
+Weight Update
+  ↓
+Repeat
+```
 
-z = x · w + b
-
-output = activation(z)
-
-Small dense layer:
-
-Z = X @ W.T + b
-
-A = activation(Z)
-
-## Setup
+## Run
 
 ```powershell
-python -m venv .venv
-.venv\Scripts\activate
-python -m pip install -r requirements.txt
 python main.py
+python backprop_intuition.py
+python training_demo.py
 python plot_activations.py
 ```
 
-## Limitations
+## Important Note
 
-This task covers only forward propagation. It does not yet implement loss functions, backpropagation, gradient descent, or training.
+The backpropagation demo uses numerical gradients to build intuition.
+It is not yet a full analytical multi-layer backpropagation engine.
+
+## Next Step
+
+A future extension can add:
+- analytical derivatives
+- chain rule
+- full backpropagation
+- multi-layer training
+- mini-batches
+- train/test datasets

@@ -1,5 +1,6 @@
 .venv/
 __pycache__/
 *.pyc
-relu_plot.png
-sigmoid_plot.png
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat

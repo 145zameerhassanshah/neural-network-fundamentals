@@ -1,72 +1,31 @@
 # Neural Network Fundamentals from Scratch
 
-This existing project now covers two stages:
+## Current Task
+How Networks Learn: Forward Pass, Loss and Backpropagation Intuition
 
-1. Neural-network building blocks
-2. How networks learn: forward pass, loss, and backpropagation intuition
-
-## Concepts Covered
-
-- Inputs
-- Weights
-- Bias
-- Weighted sums
-- ReLU
-- Sigmoid
-- Single neuron
-- Dense layer
-- Forward pass
-- Prediction
-- Target
-- Mean Squared Error
-- Binary Cross Entropy
-- Gradient intuition
-- Numerical gradients
+## Requirements Covered
+- Forward propagation
+- Binary Cross-Entropy loss
 - Backpropagation intuition
-- Learning rate
-- Gradient descent
+- Tiny network in NumPy
+- Numerical gradient estimation
+- Gradient-descent training loop
 - Weight updates
 - Epochs
-- Training vs inference
+- Learning-rate experiment
 
-## Learning Cycle
-
-```text
-Input
-  ↓
-Forward Pass
-  ↓
-Prediction
-  ↓
-Loss
-  ↓
-Gradient / Backpropagation
-  ↓
-Weight Update
-  ↓
-Repeat
-```
+## Tiny Network
+2 inputs -> 2 hidden neurons -> 1 sigmoid output
 
 ## Run
-
 ```powershell
 python main.py
-python backprop_intuition.py
-python training_demo.py
-python plot_activations.py
+python train_tiny_network.py
+python learning_rate_experiment.py
 ```
 
+## Learning Loop
+Input -> Forward Pass -> Prediction -> BCE Loss -> Gradients -> Weight Update -> Repeat
+
 ## Important Note
-
-The backpropagation demo uses numerical gradients to build intuition.
-It is not yet a full analytical multi-layer backpropagation engine.
-
-## Next Step
-
-A future extension can add:
-- analytical derivatives
-- chain rule
-- full backpropagation
-- multi-layer training
-- mini-batches
-- train/test datasets
+Numerical gradients are used here for intuition without heavy calculus. Real frameworks use analytical backpropagation/autodiff.

@@ -1,40 +1,19 @@
 import numpy as np
+from tiny_network import TinyNetwork
+from loss import binary_cross_entropy
 
-from activations import relu, sigmoid
-from neuron import Neuron
-from layer import DenseLayer
-from loss import mse_loss
-
-print("SINGLE NEURON / FORWARD PASS")
-
-inputs = np.array([2.0, 1.5, -0.5])
-neuron = Neuron([0.8, -0.4, 0.6], 0.2, sigmoid)
-
-result = neuron.forward(inputs)
-
-print("Inputs:", result["inputs"])
-print("Weighted sum:", result["weighted_sum"])
-print("Prediction:", result["output"])
-
+network = TinyNetwork(seed=42)
+x = np.array([0.0, 1.0])
 target = 1.0
-loss = mse_loss(result["output"], target)
 
+prediction, cache = network.forward(x)
+loss = binary_cross_entropy(prediction, target)
+
+print("HOW NETWORKS LEARN: FORWARD PASS + BCE")
+print("Input:", x)
+print("Hidden weighted sums:", cache["z1"])
+print("Hidden activations:", cache["a1"])
+print("Output weighted sum:", cache["z2"])
+print("Prediction:", prediction)
 print("Target:", target)
-print("MSE loss:", loss)
-
-print("\nSMALL LAYER")
-
-layer = DenseLayer(
-    weights=[
-        [0.2, 0.8, -0.5],
-        [0.5, -0.3, 0.7],
-        [-0.6, 0.4, 0.9],
-    ],
-    biases=[0.1, -0.2, 0.3],
-    activation=relu,
-)
-
-layer_result = layer.forward([1.0, 2.0, -1.0])
-
-print("Weighted sums:", layer_result["weighted_sums"])
-print("ReLU outputs:", layer_result["outputs"])
+print("Binary Cross-Entropy loss:", loss)

@@ -1,3 +1,9 @@
 .venv/
 __pycache__/
 *.pyc
+<<<<<<< HEAD
+=======
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+>>>>>>> 5fe43135423aa170c636a8460839891750fcec7a
